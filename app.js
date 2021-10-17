@@ -9,6 +9,11 @@ let notes = {
 }
 
 const block_notes = document.querySelector('.n-notes');
+const popap = document.querySelector('.popap');
+const btn_create = document.querySelector('.create');
+btn_create.addEventListener('click', function () {
+    popap.style.display = 'block';
+});
 
 const btns = document.querySelectorAll('.btn');
 btns.forEach(el => {
