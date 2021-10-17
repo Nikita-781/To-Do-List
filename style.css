@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 
 .wrapper{
@@ -12,17 +13,74 @@
 
 nav{
     width: 30%;
-    background-color: rgb(0, 128, 53);
+    background: linear-gradient(45deg, #c5c6c7, #03638f);
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 2px 2px 6px rgba(4, 4, 4, 0.5);
+}
+
+ul{
+    list-style-type: none;
+    margin-top: 15vh;
+    /* border: 1px solid; */
+    /* color: white; */
+}
+
+li{
+    padding: 8px;
+    margin: 10px 80px;
+    border: 1px solid ;
+    cursor: pointer;
+    background: linear-gradient(45deg, #066aec, #022a5f);
+    border-radius: 5px;
+    box-shadow: 2px 2px 24px rgba(4, 4, 4, 0.5);
+    transition: 0.5s;
+}
+
+li:hover{
+    transform: scale(0.97);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.title{
+    margin: 20px;
+    padding: 8px;
+    color: white;
 }
 
 .block-note{
     width: 70%;
-    background-color: orange;
+    /* background-color: orange; */
 }
 
 .note{
     width: 400px;
     height: 500px;
-    background-color: orchid;
+    text-align: center;
     margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 24px rgba(4, 4, 4, 0.5);
+}
+
+.day{
+    background: linear-gradient(45deg, #4089f0, #022a5f);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.n-notes{
+    height: 70%;
+    overflow-y:scroll;
+    border:1px solid;
+}
+
+.item{
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid;
 }
