@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+    notes = JSON.parse(localStorage.getItem('notes'));
+    // notes = JSON.parse(notes);
+    console.log(notes);
+});
+
 let notes = {
     monday: [],
     tuesday: [],
@@ -101,31 +107,36 @@ function addNote() {
             notes[key].push(textForNote);
         }
     }
-    console.log(notes);
     createBlockWithNote(day);
     textAreaNote.value = '';
     popap.style.display = 'none';
+    localStorage.setItem('notes', JSON.stringify(notes));
 }
 
 function removeReadyNote() {
-    // let arr = [];
-    // let nameDay;
-    // btns.forEach(el => {
-    //     if (el.classList.contains) {
-    //         nameDay = el.getAttribute('data-value');
-    //     }
-    // })
-    // for (const key in notes) {
-    //     if (key == nameDay) {
-    //         console.log(notes[key][0]);
-    //     }
-    // }
-
-    // this.parentNode.remove();
-
-    let a1 = 2;
-    let a2 = 4;
-    let [a3, a4] = [a2, a1];
-    console.log(a3, a4);
+    let nameDay, notesForDay;
+    let newNotesForDay = [];
+    btns.forEach(el => {
+        if (el.className == 'btn active') {
+            nameDay = el.getAttribute('data-value');
+        }
+    });
+    for (const key in notes) {
+        if (key == nameDay) {
+            notesForDay = notes[key];
+        }
+    }
+    for (let i = 0; i < notesForDay.length; i++) {
+        if (notesForDay[i] + '⮿' != this.parentNode.textContent) {
+            newNotesForDay.push(notesForDay[i]);
+        }
+    }
+    for (const key in notes) {
+        if (key == nameDay) {
+            notes[key] = newNotesForDay;
+        }
+    }
+    localStorage.setItem('notes', JSON.stringify(notes));
+    this.parentNode.remove();
 }
 
