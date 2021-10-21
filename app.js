@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     notes = JSON.parse(localStorage.getItem('notes'));
-    // notes = JSON.parse(notes);
-    console.log(notes);
 });
 
 let notes = {
